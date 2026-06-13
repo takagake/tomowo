@@ -263,15 +263,24 @@ section { position: relative; }
 [data-theme="c"] .nav-cta { border-radius: 0; }
 
 @media (max-width: 880px) { .nav-links { display: none; } }
-@media (max-width: 600px) { .nav-cta { display: none; } }
+@media (max-width: 600px) {
+  /* Keep the CTA visible on phones as a floating, thumb-reachable button */
+  .nav-cta {
+    position: fixed; right: 16px; bottom: 16px; z-index: 130;
+    padding: 14px 22px; font-size: 12px;
+    box-shadow: 0 10px 26px rgba(20,17,13,.30);
+  }
+  .nav-cta:hover { transform: translateY(-2px); }
+}
 
 /* ============================================================
    DIRECTION SWITCHER (floating)
    ============================================================ */
 .switcher {
+  display: none !important;
   position: fixed; z-index: 120;
   bottom: 22px; left: 50%; transform: translateX(-50%);
-  display: flex; align-items: center; gap: 4px;
+  align-items: center; gap: 4px;
   padding: 7px 8px;
   background: #14110d; color: #f3eee2;
   border-radius: 100px;
@@ -482,8 +491,8 @@ section { position: relative; }
 [data-theme="c"] .exp .h3en { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 .exp p { font-size: 14.5px; color: var(--ink-2); }
 .exp .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
-.exp .chips span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink); border: 1px solid var(--line-strong); padding: 4px 10px; border-radius: 100px; }
-[data-theme="c"] .exp .chips span { border-radius: 0; }
+.exp .chips > span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink); border: 1px solid var(--line-strong); padding: 4px 10px; border-radius: 100px; }
+[data-theme="c"] .exp .chips > span { border-radius: 0; }
 @media (max-width: 880px) { .exp-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
