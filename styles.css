@@ -140,6 +140,7 @@ body {
   transition: background .5s var(--ease), color .5s var(--ease);
 }
 
+noscript { display: none !important; }
 .wrap { max-width: var(--maxw); margin: 0 auto; padding-inline: var(--pad); }
 
 section { position: relative; }
