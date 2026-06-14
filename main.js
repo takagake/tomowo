@@ -79,4 +79,21 @@
       window.scrollTo({ top: y, behavior: 'smooth' });
     });
   });
+
+  /* ---------- collapsible career timeline ---------- */
+  const tl = document.querySelector('.timeline .tl');
+  const tlBtn = document.querySelector('[data-tl-toggle]');
+  if (tl && tlBtn) {
+    tl.classList.add('is-collapsed');
+    tlBtn.addEventListener('click', () => {
+      const collapsed = tl.classList.toggle('is-collapsed');
+      tlBtn.setAttribute('aria-expanded', String(!collapsed));
+      if (collapsed) {
+        const y = document.querySelector('.timeline').getBoundingClientRect().top + window.scrollY - 64;
+        window.scrollTo({ top: y, behavior: 'smooth' });
+      } else {
+        setTimeout(revealVisible, 50);
+      }
+    });
+  }
 })();

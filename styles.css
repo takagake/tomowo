@@ -262,15 +262,20 @@ section { position: relative; }
 .nav-cta:hover .arr { transform: translateX(3px); }
 [data-theme="c"] .nav-cta { border-radius: 0; }
 
-@media (max-width: 880px) { .nav-links { display: none; } }
-@media (max-width: 600px) {
-  /* Keep the CTA visible on phones as a floating, thumb-reachable button */
+@media (max-width: 880px) {
+  .nav-links { display: none; }
+  /* Below the link-collapse width, move the CTA to a floating, thumb-reachable
+     button so the top bar (logo + lang toggle) never gets cramped */
   .nav-cta {
     position: fixed; right: 16px; bottom: 16px; z-index: 130;
     padding: 14px 22px; font-size: 12px;
     box-shadow: 0 10px 26px rgba(20,17,13,.30);
   }
   .nav-cta:hover { transform: translateY(-2px); }
+}
+@media (max-width: 420px) {
+  .brand .role { display: none; }
+  .brand .logo { font-size: 20px; }
 }
 
 /* ============================================================
@@ -521,6 +526,25 @@ section { position: relative; }
   .tl-row { grid-template-columns: 76px 1fr; }
   .tl-flag { grid-column: 2; justify-self: start; margin-top: 8px; }
 }
+
+/* Collapsible career timeline (progressive enhancement) */
+.tl-more { display: none; justify-content: center; margin-top: clamp(22px,3vw,34px); }
+.js .tl-more { display: flex; }
+.tl-toggle {
+  display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+  font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); background: transparent; border: 1px solid var(--line-strong);
+  padding: 13px 26px; border-radius: 100px;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.tl-toggle:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+[data-theme="c"] .tl-toggle { border-radius: 0; }
+.tl-toggle .tl-ico { font-family: var(--f-display); font-size: 15px; line-height: 1; transition: transform .3s var(--ease); }
+.tl-toggle[aria-expanded="true"] .tl-ico { transform: rotate(45deg); }
+.tl-toggle .tl-less-label { display: none; }
+.tl-toggle[aria-expanded="true"] .tl-more-label { display: none; }
+.tl-toggle[aria-expanded="true"] .tl-less-label { display: inline; }
+.js .tl.is-collapsed .tl-row:nth-child(n+6) { display: none; }
 
 /* ============================================================
    IMPACT
