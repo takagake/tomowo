@@ -617,6 +617,47 @@ section { position: relative; }
 @media (max-width: 820px) { .svc-grid { grid-template-columns: 1fr; } }
 
 /* ============================================================
+   PLAYBOOK — 勝ちパターン
+   ============================================================ */
+.playbook { background: var(--bg-2); }
+.playbook .lead-note { max-width: 60ch; margin-top: 18px; color: var(--ink-2); font-size: clamp(14.5px,1.5vw,16px); line-height: 1.85; }
+
+.play-core {
+  display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(28px,4vw,60px);
+  align-items: center; background: var(--bg-dark); color: var(--ink-on-dark);
+  border-radius: var(--r); padding: clamp(30px,4vw,58px);
+  margin: clamp(34px,4.5vw,54px) 0 clamp(26px,3.5vw,40px);
+}
+[data-theme="c"] .play-core { border-radius: 0; }
+.play-core .ar { font-family: var(--f-mono); font-size: 12px; color: var(--accent); letter-spacing: .04em; margin-bottom: 18px; display: inline-flex; gap: 10px; align-items: center; }
+.play-core .ar::before { content: ""; width: 26px; height: 1px; background: var(--accent); }
+.play-core h3 { font-family: var(--f-jp-display); font-weight: 600; font-size: clamp(22px,2.9vw,33px); line-height: 1.45; margin-bottom: 18px; }
+[data-theme="a"] .play-core h3 { font-family: var(--f-jp-mincho); }
+.play-core h3 .accent { color: var(--accent); }
+.play-core p { font-size: 15px; line-height: 1.9; color: color-mix(in oklab, var(--ink-on-dark) 78%, transparent); max-width: 48ch; }
+.play-core-stats { display: grid; gap: clamp(16px,2vw,22px); }
+.pc-stat { border-top: 1px solid var(--line-strong); padding-top: clamp(14px,1.6vw,18px); }
+.pc-stat:first-child { border-top: 0; padding-top: 0; }
+.pc-num { font-family: var(--f-display); font-weight: 600; font-size: clamp(32px,4vw,50px); line-height: 1; letter-spacing: -.02em; display: flex; align-items: baseline; gap: 5px; color: var(--ink-on-dark); }
+.pc-num .u { font-size: .4em; color: var(--accent); font-family: var(--f-mono); letter-spacing: 0; }
+.pc-lab { margin-top: 9px; font-size: 13.5px; line-height: 1.55; color: color-mix(in oklab, var(--ink-on-dark) 62%, transparent); }
+
+.play-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.play-step { background: var(--bg); padding: clamp(24px,2.6vw,34px); display: flex; flex-direction: column; gap: 12px; }
+.play-step .no { font-family: var(--f-mono); font-size: 12px; color: var(--accent); letter-spacing: .12em; }
+.play-step h3 { font-family: var(--f-jp-display); font-size: clamp(18px,1.9vw,22px); font-weight: 600; line-height: 1.4; }
+.play-step .h3en { font-family: var(--f-display); font-size: 13px; color: var(--ink-2); letter-spacing: 0; margin-top: -8px; }
+[data-theme="c"] .play-step .h3en { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
+.play-step p { font-size: 14px; color: var(--ink-2); line-height: 1.78; }
+.play-step .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: auto; padding-top: 6px; }
+.play-step .chips > span { font-family: var(--f-mono); font-size: 10px; letter-spacing: .04em; color: var(--ink); border: 1px solid var(--line-strong); padding: 4px 9px; border-radius: 100px; }
+[data-theme="c"] .play-step .chips > span { border-radius: 0; }
+
+@media (max-width: 1000px) { .play-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 880px) { .play-core { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .play-grid { grid-template-columns: 1fr; } }
+
+/* ============================================================
    FOOTER
    ============================================================ */
 .footer { background: var(--bg-dark); color: var(--ink-on-dark); padding-block: clamp(56px,7vw,90px); }
