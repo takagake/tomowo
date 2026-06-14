@@ -261,17 +261,26 @@ section { position: relative; }
 .nav-cta .arr { transition: transform .25s; }
 .nav-cta:hover .arr { transform: translateX(3px); }
 [data-theme="c"] .nav-cta { border-radius: 0; }
+.mobile-cta { display: none; }
 
 @media (max-width: 880px) {
   .nav-links { display: none; }
-  /* Below the link-collapse width, move the CTA to a floating, thumb-reachable
-     button so the top bar (logo + lang toggle) never gets cramped */
-  .nav-cta {
+  /* Hide the in-nav CTA and hand off to a body-level floating button, so it can't
+     be trapped by the scrolled nav's backdrop-filter containing block */
+  .nav-cta { display: none; }
+  .mobile-cta {
+    display: inline-flex; align-items: center; gap: 8px;
     position: fixed; right: 16px; bottom: 16px; z-index: 130;
-    padding: 14px 22px; font-size: 12px;
+    font-family: var(--f-mono); font-size: 12px; letter-spacing: .08em;
+    text-transform: uppercase; font-weight: 600; white-space: nowrap;
+    padding: 14px 22px; border-radius: 100px; text-decoration: none;
+    background: var(--accent); color: #fff;
     box-shadow: 0 10px 26px rgba(20,17,13,.30);
+    transition: transform .25s;
   }
-  .nav-cta:hover { transform: translateY(-2px); }
+  [data-theme="c"] .mobile-cta { border-radius: 0; }
+  .mobile-cta .arr { transition: transform .25s; }
+  .mobile-cta:hover { transform: translateY(-2px); }
 }
 @media (max-width: 420px) {
   .brand .role { display: none; }
