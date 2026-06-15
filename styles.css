@@ -284,16 +284,20 @@ section { position: relative; }
   .mobile-cta:hover { transform: translateY(-2px); }
 }
 @media (max-width: 420px) {
-  /* iPhone widths: keep the "高掛智朗 / Tomowo" subtitle visible by shrinking
-     the lockup to fit on one line instead of hiding it */
+  /* iPhone widths: keep the "高掛智朗 / Tomowo" subtitle visible, near full size */
   .nav { padding-inline: 16px; }
-  .brand { gap: 7px; }
-  .brand .logo { font-size: 18px; letter-spacing: .03em; }
-  .brand .role { font-size: 9px; letter-spacing: .08em; white-space: nowrap; }
+  .brand { gap: 9px; }
+  .brand .logo { font-size: 21px; letter-spacing: .05em; }
+  .brand .role { font-size: 10px; letter-spacing: .14em; white-space: nowrap; }
+}
+@media (max-width: 380px) {
+  .brand { gap: 8px; }
+  .brand .logo { font-size: 19px; }
+  .brand .role { font-size: 9px; letter-spacing: .1em; }
 }
 @media (max-width: 340px) {
-  .brand .logo { font-size: 15.5px; }
-  .brand .role { font-size: 7.2px; letter-spacing: .04em; }
+  .brand .logo { font-size: 16.5px; }
+  .brand .role { font-size: 8px; letter-spacing: .06em; }
 }
 
 /* ============================================================
