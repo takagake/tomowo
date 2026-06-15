@@ -284,8 +284,16 @@ section { position: relative; }
   .mobile-cta:hover { transform: translateY(-2px); }
 }
 @media (max-width: 420px) {
-  .brand .role { display: none; }
-  .brand .logo { font-size: 20px; }
+  /* iPhone widths: keep the "高掛智朗 / Tomowo" subtitle visible by shrinking
+     the lockup to fit on one line instead of hiding it */
+  .nav { padding-inline: 16px; }
+  .brand { gap: 7px; }
+  .brand .logo { font-size: 18px; letter-spacing: .03em; }
+  .brand .role { font-size: 9px; letter-spacing: .08em; white-space: nowrap; }
+}
+@media (max-width: 340px) {
+  .brand .logo { font-size: 15.5px; }
+  .brand .role { font-size: 7.2px; letter-spacing: .04em; }
 }
 
 /* ============================================================
