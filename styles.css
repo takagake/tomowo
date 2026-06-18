@@ -517,6 +517,8 @@ section { position: relative; }
 .exp .h3en { font-family: var(--f-display); font-size: 14px; color: var(--ink-2); letter-spacing: 0; margin-top: -8px; }
 [data-theme="c"] .exp .h3en { font-family: var(--f-mono); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; }
 .exp p { font-size: 14.5px; color: var(--ink-2); }
+.exp .now { color: var(--ink); border-top: 1px solid var(--line); padding-top: 15px; margin-top: 2px; }
+.exp .now .now-k { display: block; font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
 .exp .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 4px; }
 .exp .chips > span { font-family: var(--f-mono); font-size: 10.5px; letter-spacing: .04em; color: var(--ink); border: 1px solid var(--line-strong); padding: 4px 10px; border-radius: 100px; }
 [data-theme="c"] .exp .chips > span { border-radius: 0; }
